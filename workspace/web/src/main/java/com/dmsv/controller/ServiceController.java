@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.dmsv.service.Service;
+import com.dmsv.service.UserService;
 import com.dmsv.vo.LoginVo;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -19,7 +19,7 @@ import com.google.gson.reflect.TypeToken;
 public class ServiceController {
 	
 	@Autowired
-	private Service service;
+	private UserService userService;
 
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public @ResponseBody Object login(HttpServletRequest request){
