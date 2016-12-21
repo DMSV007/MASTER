@@ -21,7 +21,7 @@
 			<br>
 		</div>
 		<div class="col-sm-4 col-sm-offset-4 well">
-			<form name="login" ng-submit="">
+			<form name="login" ng-submit="submitForm()">
 
 				<div class="form-group ">
 					<h3><b>Sing Up Here</b></h3>
@@ -42,11 +42,11 @@
 						required>
 				</div>
 				<div class="form-group">
-					<label>Mobile No:</label> <input type="text" name="mobileno"
+					<label>Mobile No:</label> <input type="number" name="mobileno"
 						class="form-control" id="mobileno" ng-model="user.mobileno">
 				</div>
 				<div class="form-group">
-					<label>Email Id:</label> <input type="text" name="email"
+					<label>Email Id:</label> <input type="email" name="email"
 						class="form-control" id="email" ng-model="user.email">
 				</div>
 				<div class="form-group">
@@ -59,5 +59,29 @@
 		</div>
 	</div>
 </body>
+<script>
+	var app = angular.module("app", []);
+	app.controller("postController", function($scope, $http) {
+		$scope.user = {};
+		console.log("-->" + $scope.user)
+		$scope.submitForm = function() {
+			$http({
+				method : "POST",
+				url : "/web/register",
+				data : $scope.user,
+				headers : {
+					'Content-Type' : 'application/x-www-form-urlencoded'
+				}
 
+			}).success(function(data) {
+				console.log(data.reDirectPath);
+				alert(data.message);
+				window.location = data.reDirectPath;
+			}).error(function(data, status) {
+				alert(data.message);
+			});
+
+		};
+	});
+</script>
 </html>

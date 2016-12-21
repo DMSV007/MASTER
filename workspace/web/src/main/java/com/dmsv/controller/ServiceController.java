@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.dmsv.core.UserLoginVO;
+import com.dmsv.core.UserRegisterVO;
 import com.dmsv.service.UserService;
-import com.dmsv.vo.LoginVo;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -23,12 +24,12 @@ public class ServiceController {
 
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public @ResponseBody Object login(HttpServletRequest request){
-		LoginVo loginResponse=new LoginVo();
+		UserLoginVO loginResponse=new UserLoginVO();
 		try {
 			Map<String, String[]> parameters = request.getParameterMap();
 			for(String jsonValue : parameters.keySet()) {
 				Gson gson=new Gson();
-				LoginVo login=gson.fromJson(jsonValue,new TypeToken<LoginVo>(){}.getType());
+				UserLoginVO login=gson.fromJson(jsonValue,new TypeToken<UserLoginVO>(){}.getType());
 				System.out.println("--->"+login.getUsername());
 				System.out.println("-->"+login.getPassword());
 				if(login.getUsername()!=null){
@@ -41,6 +42,31 @@ public class ServiceController {
 			}
 		} catch (Exception e) {
 			loginResponse.setReDirectPath("index.jsp");
+			e.printStackTrace();
+		}
+		return loginResponse;
+	}
+	
+	@RequestMapping(value="/register",method=RequestMethod.POST)
+	public @ResponseBody Object register(HttpServletRequest request){
+		UserRegisterVO loginResponse=new UserRegisterVO();
+		try {
+			Map<String, String[]> parameters = request.getParameterMap();
+			for(String jsonValue : parameters.keySet()) {
+				Gson gson=new Gson();
+				UserRegisterVO login=gson.fromJson(jsonValue,new TypeToken<UserRegisterVO>(){}.getType());
+				System.out.println("Register--->"+login.getUsername());
+				System.out.println("Register-->"+login.getPassword());
+				if(login.getUsername()!=null){
+					loginResponse.setMessage("Registration SuccessFul");
+					loginResponse.setReDirectPath("index.jsp");
+				}else{
+					loginResponse.setMessage("Registration Failed");
+					loginResponse.setReDirectPath("register.jsp");
+				}
+			}
+		} catch (Exception e) {
+			loginResponse.setReDirectPath("register.jsp");
 			e.printStackTrace();
 		}
 		return loginResponse;

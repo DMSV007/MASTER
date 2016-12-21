@@ -56,7 +56,7 @@
 		$scope.submitForm = function() {
 			$http({
 				method : "POST",
-				url : "/angular-sample/login",
+				url : "/web/login",
 				data : $scope.user,
 				headers : {
 					'Content-Type' : 'application/x-www-form-urlencoded'

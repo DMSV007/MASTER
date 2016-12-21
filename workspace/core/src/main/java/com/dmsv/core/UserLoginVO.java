@@ -1,6 +1,6 @@
-package com.dmsv.vo;
+package com.dmsv.core;
 
-public class LoginVo {
+public class UserLoginVO {
 
 	private String username;
 	private String password;
