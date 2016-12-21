@@ -1,4 +1,4 @@
-package com.p7.controller;
+package com.dmsv.controller;
 
 import java.util.Map;
 
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.dmsv.vo.LoginVo;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.p7.vo.LoginVo;
 
 @org.springframework.stereotype.Controller
 public class Controller {

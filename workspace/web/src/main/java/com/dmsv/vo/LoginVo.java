@@ -1,4 +1,4 @@
-package com.p7.vo;
+package com.dmsv.vo;
 
 public class LoginVo {
 
