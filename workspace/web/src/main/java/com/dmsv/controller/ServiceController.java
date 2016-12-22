@@ -57,9 +57,11 @@ public class ServiceController {
 			for(String jsonValue : parameters.keySet()) {
 				Gson gson=new Gson();
 				UserRegisterVO userRegisterVO=gson.fromJson(jsonValue,new TypeToken<UserRegisterVO>(){}.getType());
-				System.out.println("Register--->"+userRegisterVO.getUsername());
-				System.out.println("Register-->"+userRegisterVO.getPassword());
+				System.out.println("Register--->"+userRegisterVO.getEmailId());
+				System.out.println("Register-->"+userRegisterVO.getMobileNo());
 				userService.saveUserRegistration(userRegisterVO);
+				loginResponse.setMessage("Registration Success");
+				loginResponse.setReDirectPath("index.jsp");
 			}
 		} catch (Exception e) {
 			loginResponse.setMessage("Registration Failed");

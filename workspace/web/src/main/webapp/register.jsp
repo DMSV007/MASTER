@@ -42,7 +42,7 @@
 						required>
 				</div>
 				<div class="form-group">
-					<label>Mobile No:</label> <input pattern="(7|8|9)\d{9}" type="text" name="mobileno"
+					<label>Mobile No:</label> <input pattern="(7|8|9)\d{9}" type="number" name="mobileno"
 						class="form-control" id="mobileno" ng-model="user.mobileno">
 				</div>
 				<div class="form-group">
