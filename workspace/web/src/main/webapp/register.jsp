@@ -38,15 +38,15 @@
 				</div>
 				<div class="form-group">
 					<label>Confirm Password:</label> <input type="password" name="confirmPassword"
-						id="password" class="form-control" ng-model="user.confirmPassword"
+						id="confirmPassword" class="form-control" ng-model="user.confirmPassword"
 						required>
 				</div>
 				<div class="form-group">
-					<label>Mobile No:</label> <input pattern="(7|8|9)\d{9}" type="number" name="mobileno"
+					<label>Mobile No:</label> <input pattern="[0-9]{10}" type="text" name="mobileno" title="Enter valid Mobile No"
 						class="form-control" id="mobileno" ng-model="user.mobileno">
 				</div>
 				<div class="form-group">
-					<label>Email Id:</label> <input pattern="[^ @]*@[^ @]*" type="email" name="email"
+					<label>Email Id:</label> <input pattern="[^ @]*@[^ @]*" type="text" name="email" title="Enter valid Email Id"
 						class="form-control" id="email" ng-model="user.email">
 				</div>
 				<div class="form-group">
