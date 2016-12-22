@@ -11,6 +11,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.dmsv.core.ModuleConfigVO;
 import com.dmsv.core.UserLoginVO;
 import com.dmsv.core.UserRegisterVO;
 import com.dmsv.dao.UserRegistration;
@@ -51,24 +52,46 @@ public class ServiceController {
 	
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	public @ResponseBody Object register(HttpServletRequest request){
-		UserRegisterVO loginResponse=new UserRegisterVO();
+		UserRegisterVO userRegisterVO=new UserRegisterVO();
 		try {
 			Map<String, String[]> parameters = request.getParameterMap();
 			for(String jsonValue : parameters.keySet()) {
 				Gson gson=new Gson();
-				UserRegisterVO userRegisterVO=gson.fromJson(jsonValue,new TypeToken<UserRegisterVO>(){}.getType());
+				userRegisterVO=gson.fromJson(jsonValue,new TypeToken<UserRegisterVO>(){}.getType());
 				System.out.println("Register--->"+userRegisterVO.getEmailId());
 				System.out.println("Register-->"+userRegisterVO.getMobileNo());
 				userService.saveUserRegistration(userRegisterVO);
-				loginResponse.setMessage("Registration Success");
-				loginResponse.setReDirectPath("index.jsp");
+				userRegisterVO.setMessage("Registration Success");
+				userRegisterVO.setReDirectPath("index.jsp");
 			}
 		} catch (Exception e) {
-			loginResponse.setMessage("Registration Failed");
-			loginResponse.setReDirectPath("register.jsp");
+			userRegisterVO.setMessage("Registration Failed");
+			userRegisterVO.setReDirectPath("register.jsp");
 			e.printStackTrace();
 		}
-		return loginResponse;
+		return userRegisterVO;
+	}
+	
+	@RequestMapping(value="/moduleConfig",method=RequestMethod.POST)
+	public @ResponseBody Object moduleConfig(HttpServletRequest request){
+		ModuleConfigVO moduleConfigVO=new ModuleConfigVO();
+		try {
+			Map<String, String[]> parameters = request.getParameterMap();
+			for(String jsonValue : parameters.keySet()) {
+				Gson gson=new Gson();
+				moduleConfigVO=gson.fromJson(jsonValue,new TypeToken<ModuleConfigVO>(){}.getType());
+				System.out.println("Module--->"+moduleConfigVO.getModuleName());
+				System.out.println("Module-->"+moduleConfigVO.getModuleId());
+				//userService.saveUserRegistration(userRegisterVO);
+				moduleConfigVO.setMessage("Registration Success");
+				moduleConfigVO.setReDirectPath("index.jsp");
+			}
+		} catch (Exception e) {
+			moduleConfigVO.setMessage("Registration Failed");
+			moduleConfigVO.setReDirectPath("register.jsp");
+			e.printStackTrace();
+		}
+		return moduleConfigVO;
 	}
 }
 
