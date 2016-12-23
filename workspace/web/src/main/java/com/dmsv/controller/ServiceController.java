@@ -56,6 +56,7 @@ public class ServiceController {
 		UserRegisterVO userRegisterVO=new UserRegisterVO();
 		try {
 			Map<String, String[]> parameters = request.getParameterMap();
+			System.out.println("Map---->"+parameters);
 			for(String jsonValue : parameters.keySet()) {
 				Gson gson=new Gson();
 				userRegisterVO=gson.fromJson(jsonValue,new TypeToken<UserRegisterVO>(){}.getType());

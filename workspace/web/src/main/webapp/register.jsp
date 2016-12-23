@@ -42,12 +42,12 @@
 						required>
 				</div>
 				<div class="form-group">
-					<label>Mobile No:</label> <input pattern="[0-9]{10}" type="text" name="mobileno" title="Enter valid Mobile No"
-						class="form-control" id="mobileno" ng-model="user.mobileno">
+					<label>Mobile No:</label> <input pattern="[0-9]{10}" type="text" name="mobileNo" title="Enter valid Mobile No"
+						class="form-control" id="mobileNo" ng-model="user.mobileNo">
 				</div>
 				<div class="form-group">
-					<label>Email Id:</label> <input pattern="[^ @]*@[^ @]*" type="text" name="email" title="Enter valid Email Id"
-						class="form-control" id="email" ng-model="user.email">
+					<label>Email Id:</label> <input pattern="[^ @]*@[^ @]*" type="email" name="emailId" title="Enter valid Email Id"
+						class="form-control" id="emailId" ng-model="user.emailId">
 				</div>
 				<div class="form-group">
 					<a href="index.jsp" type="button" class="btn btn-primary" >Back to Sing in</a>

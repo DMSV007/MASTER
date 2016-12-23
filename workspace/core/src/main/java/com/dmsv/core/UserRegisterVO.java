@@ -4,7 +4,7 @@ public class UserRegisterVO {
 	private String username;
 	private String password;
 	private String confirmPassword;
-	private int mobileNo;
+	private Integer mobileNo;
 	private String emailId;
 	private String reDirectPath;
 	private String message;
@@ -27,10 +27,10 @@ public class UserRegisterVO {
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
 	}
-	public int getMobileNo() {
+	public Integer getMobileNo() {
 		return mobileNo;
 	}
-	public void setMobileNo(int mobileNo) {
+	public void setMobileNo(Integer mobileNo) {
 		this.mobileNo = mobileNo;
 	}
 	public String getEmailId() {
