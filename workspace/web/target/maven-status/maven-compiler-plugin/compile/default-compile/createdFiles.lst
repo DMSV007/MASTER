@@ -1,7 +1,10 @@
 com/dmsv/controller/ServiceController$2.class
 com/dmsv/serviceImp/UserServiceImp.class
+com/dmsv/service/ModuleService.class
 com/dmsv/controller/ServiceController.class
 com/dmsv/schedule/ScheduleJob.class
+com/dmsv/configurations/HibernateUtil.class
 com/dmsv/service/UserService.class
+com/dmsv/controller/ServiceController$3.class
+com/dmsv/serviceImp/ModuleServiceImp.class
 com/dmsv/controller/ServiceController$1.class
-com/dmsv/configurations/HibernateConfigurations.class
