@@ -36,17 +36,21 @@
 				</div>
 				<div class="form-group">
 					<label>Password:</label> <input type="password" name="password"
-						id="password" class="form-control" ng-model="user.password">
+						id="password" class="form-control " ng-model="user.password">
 					<span ng-show="errorPassword">{{errorPassword}}</span>
 				</div>
 				<div class="form-group">
-					<button type="submit" class="btn btn-primary">Sing in</button>
+				
+					<button type="submit" class="glyphicon glyphicon-log-in btn btn-primary "> Sing in</button>
 					&nbsp;&nbsp;&nbsp;
-					<a href="register.jsp" type="button" class="btn btn-primary" >Sing up</a>
+					<a href="register.jsp" type="button" class="glyphicon glyphicon-user btn btn-primary" >  Sing up</a>
 				</div>
-			</form>
+			</form>						
 		</div>
 	</div>
+	<!-- FOOTER -->
+	<br></br><br></br><br></br><br></br><br></br><br>	
+    <jsp:include page="footer.jsp" />  	
 </body>
 <script>
 	var app = angular.module("app", []);

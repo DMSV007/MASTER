@@ -20,17 +20,8 @@
 </head>
 <body ng-app="menu" ng-controller="postToDetail">
 	<!-- Navbar starts -->
-	<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">DMSV</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
+	<!-- FOOTER -->
+    <jsp:include page="header.jsp" />  	
 	<!-- Navbar ends -->
 
 <%for(int i=0;i<5;i++){ %>
@@ -63,7 +54,6 @@
  </div>
  <%} %>
 
- 
 </body>
 <script >
 var app = angular.module("menu", []);

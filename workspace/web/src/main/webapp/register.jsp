@@ -50,15 +50,18 @@
 						class="form-control" id="email" ng-model="user.email">
 				</div>
 				<div class="form-group">
-					<a href="index.jsp" type="button" class="btn btn-primary" >Back to Sing in</a>
+					<a href="index.jsp" type="button" class=" glyphicon glyphicon-arrow-left btn btn-primary " >Back</a>
 					&nbsp;&nbsp;&nbsp;
-					<button type="submit" class="btn btn-primary">Save</button>
+					<button type="submit" class=" glyphicon glyphicon-save btn btn-primary ">Save</button>
 					
 				</div>
 			</form>
 		</div>
 	</div>
 </body>
+	<!-- FOOTER -->
+	<br><br>
+    <jsp:include page="footer.jsp" />  	
 <script>
 	var app = angular.module("app", []);
 	app.controller("postController", function($scope, $http) {
