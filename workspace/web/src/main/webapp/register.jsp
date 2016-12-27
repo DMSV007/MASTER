@@ -2,11 +2,11 @@
 <html>
 <head>
 
-<link href="<c:url value="resources/css/bootstrap.min.css" />"
-	rel="stylesheet">
-<script src="<c:url value="resources/js/jquery.min.js" />"></script>
-<script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
-<script src="<c:url value="resources/js/angular.min.js" />"></script>
+<link href="resources/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="resources/js/jquery.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/angular.min.js"></script>
+
 
 
 <title>Register</title>
@@ -27,32 +27,40 @@
 					<h3><b>Sing Up Here</b></h3>
 				</div>
 				<div class="form-group">
-					<label>User Name:</label> <input type="text" name="username"
-						class="form-control" id="username" ng-model="user.username"
-						required>
-				</div>
+                <div class="icon-addon addon-lg">
+                    <input type="text" placeholder="User Name" class="form-control" name="username" id="username" ng-model="user.username" required>
+                    <label for="username" class="glyphicon glyphicon-user" rel="tooltip" title="username"></label>
+                </div>
+            	</div>
+
 				<div class="form-group">
-					<label>Password:</label> <input type="password" name="password"
-						id="password" class="form-control" ng-model="user.password"
-						required>
-				</div>
+                <div class="icon-addon addon-lg">
+                    <input type="text" placeholder="Password" class="form-control" name="password" id="password" ng-model="user.password" required>
+                    <label for="password" class="glyphicon glyphicon-eye-close" rel="tooltip" title="password"></label>
+                </div>
+            	</div>
 				<div class="form-group">
-					<label>Confirm Password:</label> <input type="password" name="confirmPassword"
-						id="confirmPassword" class="form-control" ng-model="user.confirmPassword"
-						required>
-				</div>
+                <div class="icon-addon addon-lg">
+                    <input type="text" placeholder="Confirm Password" class="form-control" name="confirmPassword" id="confirmPassword" ng-model="user.confirmPassword" required>
+                    <label for="confirmPassword" class="glyphicon glyphicon-hand-right" rel="tooltip" title="confirmPassword"></label>
+                </div>
+            	</div>
 				<div class="form-group">
-					<label>Mobile No:</label> <input pattern="[0-9]{10}" type="text" name="mobileNo" title="Enter valid Mobile No"
-						class="form-control" id="mobileNo" ng-model="user.mobileNo">
-				</div>
+                <div class="icon-addon addon-lg">
+                    <input type="text" pattern="[0-9]{10}" placeholder="Mobile No" class="form-control" name="mobileNo" id="mobileNo" title="Enter valid Mobile No" ng-model="user.mobileNo">
+                    <label for="mobileNo" class="glyphicon glyphicon-search" rel="tooltip" title="mobileNo"></label>
+                </div>
+            	</div>
 				<div class="form-group">
-					<label>Email Id:</label> <input pattern="[^ @]*@[^ @]*" type="email" name="emailId" title="Enter valid Email Id"
-						class="form-control" id="emailId" ng-model="user.emailId">
-				</div>
+                <div class="icon-addon addon-lg">
+                    <input type="text" pattern="[^ @]*@[^ @]*" placeholder="Email Id" class="form-control" name="emailId" id="emailId" title="Enter valid Email Id" ng-model="user.emailId">
+                    <label for="emailId" class="glyphicon glyphicon-search" rel="tooltip" title="emailId"></label>
+                </div>
+            	</div>
 				<div class="form-group">
-					<a href="index.jsp" type="button" class=" glyphicon glyphicon-arrow-left btn btn-primary " >Back</a>
+					<a href="index.jsp" type="button" class=" glyphicon glyphicon-arrow-left btn btn-primary"> Back</a>
 					&nbsp;&nbsp;&nbsp;
-					<button type="submit" class=" glyphicon glyphicon-save btn btn-primary ">Save</button>
+					<button type="submit" class=" glyphicon glyphicon-save btn btn-primary">  Save</button>
 					
 				</div>
 			</form>
@@ -60,7 +68,6 @@
 	</div>
 </body>
 	<!-- FOOTER -->
-	<br><br>
     <jsp:include page="footer.jsp" />  	
 <script>
 	var app = angular.module("app", []);

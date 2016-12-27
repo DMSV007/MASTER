@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<footer class="footer1 ">
+<footer class="footer">
         <div class="container">
 
             <a href="#"><i class="fa fa-facebook-official fa-2x"></i></a>

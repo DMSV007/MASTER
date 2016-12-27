@@ -2,11 +2,10 @@
 <html>
 <head>
 <title>Login</title>
-<link href="<c:url value="resources/css/bootstrap.min.css" />"
-	rel="stylesheet">
-<script src="<c:url value="resources/js/jquery.min.js" />"></script>
-<script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
-<script src="<c:url value="resources/js/angular.min.js" />"></script>
+<link href="resources/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="resources/js/jquery.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/angular.min.js"></script>
 
 
 <!-- <link rel="stylesheet"
@@ -27,18 +26,24 @@
 			<form name="login" ng-submit="submitForm()">
 
 				<div class="form-group ">
-					<h3><b>Validate Your Credentials Below!/<b></h3>
+					<h3><b>Validate Your Credentials Below!<b></h3>
 				</div>
+				
 				<div class="form-group">
-					<label>User Id:</label> <input type="text" name="username"
-						class="form-control" id="username" ng-model="user.username">
-					<span ng-show="errorUserName">{{errorUserName}}</span>
-				</div>
+                <div class="icon-addon addon-lg">
+                    <input type="text" placeholder="User Id" class="form-control" name="userid" id="userid" ng-model="user.username">
+                    <label for="userid" class="glyphicon glyphicon-user" rel="tooltip" title="userid"></label>
+                    <span ng-show="errorUserName">{{errorUserName}}</span>
+                </div>
+            	</div>
+				
 				<div class="form-group">
-					<label>Password:</label> <input type="password" name="password"
-						id="password" class="form-control " ng-model="user.password">
-					<span ng-show="errorPassword">{{errorPassword}}</span>
-				</div>
+                <div class="icon-addon addon-lg">
+                    <input type="text" placeholder="Password" class="form-control" name="password" id="password" ng-model="user.password">
+                    <label for="password" class="glyphicon glyphicon-eye-close" rel="tooltip" title="password"></label>
+                   <span ng-show="errorPassword">{{errorPassword}}</span>
+                </div>
+            	</div>
 				<div class="form-group">
 				
 					<button type="submit" class="glyphicon glyphicon-log-in btn btn-primary "> Sing in</button>
@@ -49,7 +54,6 @@
 		</div>
 	</div>
 	<!-- FOOTER -->
-	<br></br><br></br><br></br><br></br><br></br><br>	
     <jsp:include page="footer.jsp" />  	
 </body>
 <script>

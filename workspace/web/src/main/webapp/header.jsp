@@ -22,19 +22,18 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#"></a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#"></a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#"></a>
                     </li>
                 </ul>
                 
                  <ul class="nav navbar-nav navbar-right">
-				 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-				 <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                 <jsp:include page="dropDown.jsp" />
 				</ul>
             </div>
         </div>
