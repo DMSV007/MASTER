@@ -17,7 +17,7 @@ public class ModuleServiceImp extends HibernateUtil implements ModuleService{
 	public int saveModuleConfig(ModuleConfigVO moduleConfigVO)throws Exception{
 		try {
 			ModuleConfig moduleConfig=new ModuleConfig();
-			Session session = getSessionFactory(UserRegistration.class.getName()).openSession();
+			Session session = getSessionFactory(ModuleConfig.class.getName()).openSession();
 			System.out.println("session ---->"+session);
 			BeanUtils.copyProperties(moduleConfig, moduleConfigVO);
 			System.out.println("tttttt ---->"+moduleConfig.getModuleName());
@@ -28,7 +28,7 @@ public class ModuleServiceImp extends HibernateUtil implements ModuleService{
 			session.close();
 			System.out.println("Successfully created " + moduleConfig.toString());
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		return 0;
 	}
