@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import com.dmsv.configurations.HibernateUtil;
 import com.dmsv.core.ModuleConfigVO;
 import com.dmsv.dao.ModuleConfig;
-import com.dmsv.dao.UserRegistration;
 import com.dmsv.service.ModuleService;
 
 @Service("moduleService")
